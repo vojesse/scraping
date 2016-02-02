@@ -1,2 +1,2 @@
 # scraping
-stats.nba.com scrapers
+stats.nba.com scraper (box scores and play by plays)
