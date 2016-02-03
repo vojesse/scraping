@@ -39,6 +39,9 @@ for (i in 1:length(gameNameID$gameName))
 }
 Sys.time()
 
+"""
+Scrape for Box Score - Traditional
+"""
 gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=", gameNameID$gameID, "&RangeType=0&Season=2014-15&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
 setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/traditional')
 for (i in 1:length(gameNameID$gameName))
@@ -55,9 +58,106 @@ for (i in 1:length(gameNameID$gameName))
 }
 Sys.time()
 
-setwd('/Users/jessevo/Documents/NBA/net+/Scraping')
+"""
+Scrape for Box Score - Advanced
+"""
 gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscoreadvancedv2?EndPeriod=10&EndRange=34800&GameID=", gameNameID$gameID, "&RangeType=0&Season=2014-15&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
 setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/advanced')
+for (i in 1:length(gameNameID$gameName))
+#For each game played.
+{
+	print(i)
+	#Build filename from gameName and file extension
+	fileName = paste(gameNameID$gameName[[i]], '.JSON', sep ='')
+	url = gameNameID$gameURL[[i]]
+	gID = gameNameID$gameID[[i]]
+	json_data = fromJSON(file=url)
+	json_data = toJSON(json_data)
+	write(json_data, file = fileName)
+}
+Sys.time()
+
+"""
+Scrape for Box Score - Misc
+"""
+gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscoremiscv2?EndPeriod=10&EndRange=40800&GameID=", gameNameID$gameID, "&RangeType=0&Season=2015-16&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
+setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/misc')
+for (i in 1:length(gameNameID$gameName))
+#For each game played.
+{
+	print(i)
+	#Build filename from gameName and file extension
+	fileName = paste(gameNameID$gameName[[i]], '.JSON', sep ='')
+	url = gameNameID$gameURL[[i]]
+	gID = gameNameID$gameID[[i]]
+	json_data = fromJSON(file=url)
+	json_data = toJSON(json_data)
+	write(json_data, file = fileName)
+}
+Sys.time()
+
+"""
+Scrape for Box Score - Scoring
+"""
+gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscorescoringv2?EndPeriod=10&EndRange=40800&GameID=", gameNameID$gameID, "&RangeType=0&Season=2015-16&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
+setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/scoring')
+for (i in 1:length(gameNameID$gameName))
+#For each game played.
+{
+	print(i)
+	#Build filename from gameName and file extension
+	fileName = paste(gameNameID$gameName[[i]], '.JSON', sep ='')
+	url = gameNameID$gameURL[[i]]
+	gID = gameNameID$gameID[[i]]
+	json_data = fromJSON(file=url)
+	json_data = toJSON(json_data)
+	write(json_data, file = fileName)
+}
+Sys.time()
+
+"""
+Scrape for Box Score - Usage
+"""
+gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscoreusagev2?EndPeriod=10&EndRange=40800&GameID=", gameNameID$gameID, "&RangeType=0&Season=2015-16&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
+setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/usage')
+for (i in 1:length(gameNameID$gameName))
+#For each game played.
+{
+	print(i)
+	#Build filename from gameName and file extension
+	fileName = paste(gameNameID$gameName[[i]], '.JSON', sep ='')
+	url = gameNameID$gameURL[[i]]
+	gID = gameNameID$gameID[[i]]
+	json_data = fromJSON(file=url)
+	json_data = toJSON(json_data)
+	write(json_data, file = fileName)
+}
+Sys.time()
+
+"""
+Scrape for Box Score - Four Factors
+"""
+gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscorefourfactorsv2?EndPeriod=10&EndRange=40800&GameID=", gameNameID$gameID, "&RangeType=0&Season=2015-16&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
+setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/fourfactors')
+for (i in 1:length(gameNameID$gameName))
+#For each game played.
+{
+	print(i)
+	#Build filename from gameName and file extension
+	fileName = paste(gameNameID$gameName[[i]], '.JSON', sep ='')
+	url = gameNameID$gameURL[[i]]
+	gID = gameNameID$gameID[[i]]
+	json_data = fromJSON(file=url)
+	json_data = toJSON(json_data)
+	write(json_data, file = fileName)
+}
+Sys.time()
+
+"""
+Scrape for Box Score - Player Tracking
+"""
+gameNameID$gameURL = paste("http://stats.nba.com/stats/boxscoreplayertrackv2?EndPeriod=10&EndRange=55800&GameID=", gameNameID$gameID, "&RangeType=2&Season=2015-16&SeasonType=Regular+Season&StartPeriod=1&StartRange=0", sep = "")
+setwd('/Users/jessevo/Documents/NBA/net+/scrapes/boxscores/playertrack')
 for (i in 1:length(gameNameID$gameName))
 #For each game played.
 {
